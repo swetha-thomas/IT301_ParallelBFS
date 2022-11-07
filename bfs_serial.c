@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 40
+#define SIZE 100
 
 struct queue {
     int items[SIZE];
@@ -162,14 +162,25 @@ void printQueue(struct queue* q) {
 
 int main()
 {
-    struct Graph* graph = createGraph(6);
-    addEdge(graph, 0, 1);
-    addEdge(graph, 0, 2);
-    addEdge(graph, 1, 2);
-    addEdge(graph, 1, 4);
-    addEdge(graph, 1, 3);
-    addEdge(graph, 2, 4);
-    addEdge(graph, 3, 4);
+    struct Graph* graph = createGraph(100);
+    
+//     addEdge(graph, 0, 1);
+//     addEdge(graph, 0, 2);
+//     addEdge(graph, 1, 2);
+//     addEdge(graph, 1, 4);
+//     addEdge(graph, 1, 3);
+//     addEdge(graph, 2, 4);
+//     addEdge(graph, 3, 4);
+    int num;
+    for(int i=0;i<100;i++){
+        for(int j=0;j<100;j++){
+            scanf("%d",&num);
+            if(num==1){
+                addEdge(graph, i, j);
+            }
+        }
+    }
+    
 
     bfs(graph, 0);
 
